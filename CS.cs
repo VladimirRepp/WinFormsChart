@@ -24,17 +24,19 @@ namespace Chart_CS
         }
 
         // Button click handlers (created by clicking on buttons!): 
+
+        // Create the chart
         private void построитьГрафикToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (checkBox_cos.Checked == false && checkBox_sin.Checked == false)
             {
-                MessageBox.Show("Выберите хотя бы один график!","Внимание!");
+                MessageBox.Show("Choose at least one chart!", "Attention!");
                 return;
             }
 
             if(textBox_a.Text == "" || textBox_b.Text == "" || textBox_h.Text == "")
             {
-                MessageBox.Show("Параметры по умолчанию!","Внимание!");
+                MessageBox.Show("Default parameters!", "Attention!");
                 DefaultParams();
             }
             else
@@ -69,11 +71,12 @@ namespace Chart_CS
             }
         }
 
+        // Clear the chart 
         private void очиститьГрафикToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (checkBox_cos.Checked == false && checkBox_sin.Checked == false)
             {
-                MessageBox.Show("Выберите хотя бы один график!", "Внимание!");
+                MessageBox.Show("Choose at least one chart!", "Attention!");
                 return;
             }
 
@@ -88,9 +91,10 @@ namespace Chart_CS
             }
         }
 
+        // Exit 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Выйти?","Внимание!",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if(MessageBox.Show("Exit?", "Attention!", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Application.Exit();
             }
