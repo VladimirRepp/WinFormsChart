@@ -5,9 +5,9 @@
     private: double x, y;
 
     // Button click handlers (need to be created by clicking on the buttons!)
-    private: System::Void ïîñòğîèòüÃğàôèêToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
-    private: System::Void î÷èñòèòüÃğàôèêToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
-    private: System::Void âûõîäToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+    private: System::Void Ã¯Ã®Ã±Ã²Ã°Ã®Ã¨Ã²Ã¼ÃƒÃ°Ã Ã´Ã¨ÃªToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+    private: System::Void Ã®Ã·Ã¨Ã±Ã²Ã¨Ã²Ã¼ÃƒÃ°Ã Ã´Ã¨ÃªToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+    private: System::Void Ã¢Ã»ÃµÃ®Ã¤ToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
     // Additional method
     private: void DefaultParams();
 // ---- ----
@@ -32,15 +32,16 @@ void main(array<String^>^ args) {
     Application::Run(% form);
 }
 
-System::Void ChartCPP::MyForm::ïîñòğîèòüÃğàôèêToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
+// Build the chart 
+System::Void ChartCPP::MyForm::Ğ¿Ğ¾ÑÑ‚Ñ€Ğ¾Ğ¸Ñ‚ÑŒĞ“Ñ€Ğ°Ñ„Ğ¸ĞºToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
     if (checkBox_cos->Checked == false && checkBox_sin->Checked == false) {
-        MessageBox::Show("Âûáåğèòå õîòÿ áû îäèí ãğàôèê!","Âíèìàíèå!");
+        MessageBox::Show("Select at least one chart!", "Attention!");
         return;
     }
 
     if (textBox_a->Text == "" || textBox_b->Text == "" || textBox_h->Text == "") {
-        MessageBox::Show("Ïàğàìåòğû ïî óìîë÷àíèş!","Âíèìàíèå!");
+        MessageBox::Show("Default parameters!", "Attention!");
         DefaultParams();
     }
     else {
@@ -72,10 +73,11 @@ System::Void ChartCPP::MyForm::ïîñòğîèòüÃğàôèêToolStripMenuItem_Click(System::Ob
     }    
 }
 
-System::Void ChartCPP::MyForm::î÷èñòèòüÃğàôèêToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
+// Clear the chart
+System::Void ChartCPP::MyForm::Ğ¾Ñ‡Ğ¸ÑÑ‚Ğ¸Ñ‚ÑŒĞ“Ñ€Ğ°Ñ„Ğ¸ĞºToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
     if (checkBox_cos->Checked == false && checkBox_sin->Checked == false) {
-        MessageBox::Show("Âûáåğèòå õîòÿ áû îäèí ãğàôèê!", "Âíèìàíèå!");
+        MessageBox::Show("Choose at least one chart!", "Attention!");
         return;
     }
 
@@ -88,13 +90,20 @@ System::Void ChartCPP::MyForm::î÷èñòèòüÃğàôèêToolStripMenuItem_Click(System::Obj
     }
 }
 
-System::Void ChartCPP::MyForm::âûõîäToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
+// Exit
+System::Void ChartCPP::MyForm::Ğ²Ñ‹Ñ…Ğ¾Ğ´ToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
-    if (MessageBox::Show("Âûéòè?", "Âíèìàíèå!", MessageBoxButtons::YesNo) == Windows::Forms::DialogResult::Yes) {
+    if (MessageBox::Show("Exit?", "Attention!", MessageBoxButtons::YesNo) == Windows::Forms::DialogResult::Yes) {
         Application::Exit();
    }
 }
 
+void ChartCPP::MyForm::DefaultParams()
+{
+    a = -10;
+    b = 10;
+    h = 0.1;
+}
 void ChartCPP::MyForm::DefaultParams()
 {
     a = -10;
