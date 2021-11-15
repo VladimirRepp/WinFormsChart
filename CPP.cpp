@@ -5,9 +5,9 @@
     private: double x, y;
 
     // Button click handlers (need to be created by clicking on the buttons!)
-    private: System::Void ïîñòðîèòüÃðàôèêToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
-    private: System::Void î÷èñòèòüÃðàôèêToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
-    private: System::Void âûõîäToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+    private: System::Void построитьГрафикToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+    private: System::Void очиститьГрафикToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+    private: System::Void выходToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
     // Additional method
     private: void DefaultParams();
 // ---- ----
